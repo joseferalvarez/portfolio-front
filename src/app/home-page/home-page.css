@@ -1,0 +1,16 @@
+.home{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  padding: 100px 20px;
+  
+  & .column:nth-child(1){
+    position: fixed;
+    flex-grow: 1;
+  }
+
+  & .column:nth-child(2){
+    flex-grow: 2;
+    height: 200vh;
+  }
+}

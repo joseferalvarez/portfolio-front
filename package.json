@@ -1,6 +1,7 @@
 {
   "name": "portfolio-front",
   "version": "0.0.0",
+  "author": "Jose Fernando Alvarez Romero <joseferalvarezromero@gmail.com>",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

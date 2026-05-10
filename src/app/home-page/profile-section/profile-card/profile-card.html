@@ -1,0 +1,17 @@
+<div class="profile-card">
+  <img [src]="avatarUrl()" />
+  <h2>{{name()}}</h2>
+  <p>{{bio()}}</p>
+
+  @if(socialAccounts()){
+  <ul>
+    @for(account of socialAccounts(); track account.provider){
+    <li>
+      <a [href]="account.url" target="_blank">
+        {{account.provider}}
+      </a>
+    </li>
+    }
+  </ul>
+  }
+</div>
