@@ -1,0 +1,20 @@
+a {
+  border: 2px solid var(--color-accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bolder;
+  color: var(--color-accent-primary);
+  transition: all 0.2s ease-in-out;
+  padding: 10px 20px;
+  margin: 10px 0px;
+  gap: 10px;
+
+  &:hover {
+    border: 2px solid var(--color-accent-secondary);
+    color: var(--color-accent-secondary);
+  }
+}

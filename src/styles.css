@@ -1,18 +1,20 @@
 @font-face {
   font-family: 'Geist';
   src:
-    url('/public/Geist.woff2') format('woff2'),
-    url('/public/Geist.ttf') format('truetype');
+    url('https://pysvmkppuyugirhlpznm.supabase.co/storage/v1/object/public/portfolio/fonts/Geist.woff2')
+      format('woff2'),
+    url('https://pysvmkppuyugirhlpznm.supabase.co/storage/v1/object/public/portfolio/fonts/Geist.ttf')
+      format('truetype');
 
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-:root{
+:root {
   --color-primary: oklch(0.1763 0.014 258.36);
   --color-secondary: oklch(0.2202 0.0157 256.82);
-  --color-ternary: oklch(0.2635 0.0144 261.68);
+  --color-ternary: oklch(0.4459 0 148.24);
 
   --color-accent-primary: oklch(0.5078 0.0855 186.32);
   --color-accent-secondary: oklch(0.6563 0.0855 186.32);
@@ -21,32 +23,39 @@
   --color-text-primary: oklch(0.9636 0.0038 41.26);
   --color-text-secondary: oklch(0.9257 0.0126 255.51);
   --color-text-ternary: oklch(0.869 0.0198 252.89);
-  
+
   font-family: 'Geist', sans-serif;
 }
 
-body{
+body {
   margin: 0px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-.app{
+img {
+  image-rendering: auto;
+}
+
+.app {
   min-height: 100vh;
   width: 100%;
   display: flex;
   align-items: center;
   flex-direction: column;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
-  & > div{
+  & > div {
     max-width: 1200px;
     width: 100%;
   }
 }
 
-.app.dark{
+.app.dark {
   --color-primary: oklch(0.1763 0.014 258.36);
   --color-secondary: oklch(0.2202 0.0157 256.82);
-  --color-ternary: oklch(0.2635 0.0144 261.68);
+  --color-ternary: oklch(0.4459 0 148.24);
 
   --color-accent-primary: oklch(0.5078 0.0855 186.32);
   --color-accent-secondary: oklch(0.6563 0.0855 186.32);
@@ -60,7 +69,7 @@ body{
   color: var(--color-text-primary);
 }
 
-.app.light{
+.app.light {
   --color-primary: oklch(0.9636 0.0038 41.26);
   --color-secondary: oklch(0.9257 0.0126 255.51);
   --color-ternary: oklch(0.869 0.0198 252.89);
@@ -71,17 +80,17 @@ body{
 
   --color-text-primary: oklch(0.1763 0.014 258.36);
   --color-text-secondary: oklch(0.2202 0.0157 256.82);
-  --color-text-ternary: oklch(0.2635 0.0144 261.68);
+  --color-text-ternary: oklch(0.4459 0 148.24);
 
   background-color: var(--color-primary);
   color: var(--color-text-primary);
 }
 
-@media (prefers-color-scheme: dark){
-  .app.default{
+@media (prefers-color-scheme: dark) {
+  .app.default {
     --color-primary: oklch(0.1763 0.014 258.36);
     --color-secondary: oklch(0.2202 0.0157 256.82);
-    --color-ternary: oklch(0.2635 0.0144 261.68);
+    --color-ternary: oklch(0.4459 0 148.24);
 
     --color-accent-primary: oklch(0.5078 0.0855 186.32);
     --color-accent-secondary: oklch(0.6563 0.0855 186.32);
@@ -96,8 +105,8 @@ body{
   }
 }
 
-@media (prefers-color-scheme: light){
-  .app.default{
+@media (prefers-color-scheme: light) {
+  .app.default {
     --color-primary: oklch(0.9636 0.0038 41.26);
     --color-secondary: oklch(0.9257 0.0126 255.51);
     --color-ternary: oklch(0.869 0.0198 252.89);

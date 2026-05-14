@@ -1,17 +1,23 @@
 <div class="profile-card">
-  <img [src]="avatarUrl()" />
-  <h2>{{name()}}</h2>
-  <p>{{bio()}}</p>
+  <img [src]="avatar()" [alt]="name()" />
+  <h2>
+    <span class="name">{{ name() }}</span>
+    <span class="lastname"> {{ lastname() }}</span>
+  </h2>
 
-  @if(socialAccounts()){
-  <ul>
-    @for(account of socialAccounts(); track account.provider){
-    <li>
-      <a [href]="account.url" target="_blank">
-        {{account.provider}}
-      </a>
-    </li>
-    }
-  </ul>
+  @if (curriculum()) {
+    <download-link [text]="'Download CV'" [url]="curriculum() || ''"></download-link>
+  }
+
+  <p class="bio">{{ bio() }}</p>
+
+  @if (socialAccounts()) {
+    <ul class="social-media-list">
+      @for (account of socialAccounts(); track account.name) {
+        <li class="social-media-item">
+          <icon-link [icon]="account.icon" [url]="account.url"></icon-link>
+        </li>
+      }
+    </ul>
   }
 </div>

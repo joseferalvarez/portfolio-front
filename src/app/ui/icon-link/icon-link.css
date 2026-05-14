@@ -1,0 +1,24 @@
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--color-text-primary);
+  box-shadow: inset 2px 2px 20px 5px var(--color-text-primary);
+  transition: all 0.2s ease-in-out;
+
+  & > img {
+    width: 100%;
+    object-fit: cover;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &:hover {
+    box-shadow: inset 2px 2px 20px 5px var(--color-text-ternary);
+
+    & > img {
+      scale: 1.1;
+    }
+  }
+}

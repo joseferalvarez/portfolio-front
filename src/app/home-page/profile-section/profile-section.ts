@@ -1,7 +1,5 @@
-import { Component, computed, inject } from "@angular/core"
-import { ProfileService } from "../../shared/services/profile-service";
-import { ProfileCard } from "./profile-card/profile-card";
-import { JsonPipe } from "@angular/common";
+import { Component } from '@angular/core';
+import { ProfileCard } from './profile-card/profile-card';
 
 @Component({
   selector: 'profile-section',
@@ -9,5 +7,4 @@ import { JsonPipe } from "@angular/common";
   templateUrl: './profile-section.html',
   styleUrl: './profile-section.css',
 })
-export class ProfileSection {
-}
+export class ProfileSection {}
