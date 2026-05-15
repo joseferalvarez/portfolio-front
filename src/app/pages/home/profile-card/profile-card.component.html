@@ -1,0 +1,25 @@
+<div class="profile-card">
+  @if (profile()) {
+    <img [src]="profile()?.avatar" [alt]="profile()?.name" />
+    <h2>
+      <span class="name">{{ profile()?.name }}</span>
+      <span class="lastname"> {{ profile()?.lastname }}</span>
+    </h2>
+
+    @if (profile()?.curriculum) {
+      <download-link [text]="'Download CV'" [url]="profile()?.curriculum || ''"></download-link>
+    }
+
+    <p class="bio">{{ profile()?.bio }}</p>
+
+    @if (profile()?.social_accounts) {
+      <ul class="social-media-list">
+        @for (account of profile()?.social_accounts; track account.name) {
+          <li class="social-media-item">
+            <icon-link [icon]="account.icon" [url]="account.url"></icon-link>
+          </li>
+        }
+      </ul>
+    }
+  }
+</div>

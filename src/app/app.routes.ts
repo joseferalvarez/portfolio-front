@@ -1,34 +1,24 @@
-import { Routes } from "@angular/router";
-import { BlogPage } from "./blog-page/blog-page";
-import { ContactPage } from "./contact-page/contact-page";
-import { HomePage } from "./home-page/home-page";
-import { LabsPage } from "./labs-page/labs-page";
-import { ProjectsPage } from "./projects-page/projects-page";
-import { DesignPage } from "./design-page/design-page";
+import { Routes } from '@angular/router';
+import { Home } from '@pages/home/home.component';
+import { localeResolver } from '@resolvers/locale.resolver';
+import { localeGuard } from '@guards/locale.guard';
 
 export const routes: Routes = [
   {
+    path: ':lang',
+    canActivate: [localeGuard],
+    resolve: {
+      lang: localeResolver,
+    },
+    children: [{ path: '', component: Home }],
+  },
+  {
     path: '',
-    component: HomePage
+    pathMatch: 'full',
+    redirectTo: 'en',
   },
   {
-    path: 'blog',
-    component: BlogPage
+    path: '**',
+    redirectTo: 'en',
   },
-  {
-    path: 'projects',
-    component: ProjectsPage
-  },
-  {
-    path: 'labs',
-    component: LabsPage
-  },
-  {
-    path: 'contact',
-    component: ContactPage
-  },
-  {
-    path: 'design',
-    component: DesignPage
-  }
 ];
