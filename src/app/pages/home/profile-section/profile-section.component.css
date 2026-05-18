@@ -1,3 +1,18 @@
-button{
-  background-color: red;
+.profile-section {
+  & h1 {
+    font-size: 6rem;
+    font-weight: 800;
+    margin: 0px;
+    line-height: 6rem;
+    display: flex;
+    flex-direction: column;
+
+    & span:nth-child(2) {
+      color: var(--ring);
+    }
+  }
+
+  & div {
+    margin-top: 30px;
+  }
 }

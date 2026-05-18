@@ -4,9 +4,10 @@ a {
   justify-content: center;
   padding: 10px;
   border-radius: 10px;
+  border: 1px solid var(--border-card);
   background-color: var(--color-text-primary);
-  box-shadow: inset 2px 2px 20px 5px var(--color-text-primary);
   transition: all 0.2s ease-in-out;
+  background-color: oklch(1 0 0);
 
   & > img {
     width: 100%;
@@ -15,8 +16,6 @@ a {
   }
 
   &:hover {
-    box-shadow: inset 2px 2px 20px 5px var(--color-text-ternary);
-
     & > img {
       scale: 1.1;
     }

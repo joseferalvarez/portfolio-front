@@ -1,1 +1,12 @@
-<div></div>
+<section class="profile-section">
+  <h1>
+    @for (word of position(); track $index) {
+      <span>{{ word | uppercase }}</span>
+    }
+  </h1>
+  <div>
+    @for (paragraph of description(); track $index) {
+      <p>{{ paragraph }}</p>
+    }
+  </div>
+</section>

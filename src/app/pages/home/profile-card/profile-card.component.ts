@@ -7,7 +7,7 @@ import { Profile } from '@services/profile.service';
   selector: 'profile-card',
   templateUrl: './profile-card.component.html',
   styleUrl: './profile-card.component.css',
-  imports: [IconLink, DownloadLink],
+  imports: [IconLink],
 })
 export class ProfileCard {
   private readonly _profileCard = inject(Profile);
