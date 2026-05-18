@@ -1,26 +1,32 @@
-interface ISocialAccount {
-  name: string;
-  url: string;
-  icon: string;
-}
+import { z } from 'zod';
 
-export interface IProfileCard {
-  name: string;
-  lastname: string;
-  avatar: string;
-  bio: string;
-  curriculum: string;
-  social_accounts: ISocialAccount[];
-}
+const socialAccount = z.object({
+  name: z.string(),
+  url: z.url(),
+  icon: z.string(),
+});
 
-export interface IProfileSection {
-  position: string;
-  description: string;
-}
+const profileCard = z.object({
+  name: z.string(),
+  lastname: z.string(),
+  avatar: z.url(),
+  bio: z.string(),
+  curriculum: z.string(),
+  social_accounts: z.array(socialAccount),
+});
 
-export interface IProfileProject {
-  name: string;
-  description: string;
-  webpage: string;
-  logo: string;
-}
+const profileSection = z.object({
+  position: z.string(),
+  description: z.string(),
+});
+
+const profileProject = z.object({
+  name: z.string(),
+  description: z.string(),
+  webpage: z.url(),
+  logo: z.url(),
+});
+
+export type IProfileCard = z.infer<typeof profileCard>;
+export type IProfileSection = z.infer<typeof profileSection>;
+export type IProfileProject = z.infer<typeof profileProject>;

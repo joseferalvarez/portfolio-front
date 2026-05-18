@@ -1,4 +1,5 @@
 import { Injectable, signal, computed } from '@angular/core';
+import { Theme } from '../models/theme';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,7 @@ export class ThemeService {
     this._theme.update((theme) => {
       switch (theme) {
         case 'default':
+          if (!window.matchMedia) return 'light';
           return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark';
         case 'dark':
           return 'light';
