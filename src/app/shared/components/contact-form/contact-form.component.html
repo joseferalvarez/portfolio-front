@@ -1,5 +1,5 @@
 <div>
-  <form class="contact-form" novalidate>
+  <form class="contact-form" (submit)="onSubmit($event)" novalidate>
     <div class="inputs">
       <div class="input-text">
         <label for="name">
@@ -106,7 +106,7 @@
       </div>
     </div>
     <div class="buttons">
-      <button type="submit" (submit)="onSubmit($event)">Send message</button>
+      <button type="submit">Send message</button>
     </div>
   </form>
 </div>

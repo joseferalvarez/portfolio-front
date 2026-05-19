@@ -33,7 +33,7 @@ export class ContactForm {
     event.preventDefault();
 
     submit(this.contactForm, async (data) => {
-      console.log(data);
+      console.log();
     });
   }
 }

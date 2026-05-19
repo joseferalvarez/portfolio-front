@@ -61,6 +61,21 @@
   }
 }
 
+button[type='submit'] {
+  background-color: var(--chart-4);
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--chart-3);
+  }
+}
+
 .message {
   & textarea {
     resize: vertical;
