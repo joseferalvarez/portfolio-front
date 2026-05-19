@@ -1,0 +1,68 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--border);
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--card);
+  gap: 20px;
+
+  & .inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    & .input-text:last-child {
+      grid-column: span 2;
+    }
+  }
+
+  & label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-left: 2px;
+
+    & .required {
+      color: var(--chart-1);
+    }
+  }
+
+  & input,
+  & textarea {
+    background-color: var(--input);
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid var(--border);
+
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
+.input-text,
+.message,
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  & .errors {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-left: 20px;
+    margin: 4px 0px;
+    font-size: 0.8rem;
+    & li {
+      color: var(--destructive);
+    }
+  }
+}
+
+.message {
+  & textarea {
+    resize: vertical;
+  }
+}

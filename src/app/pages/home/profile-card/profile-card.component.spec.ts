@@ -18,6 +18,6 @@ describe('ProfileCard', () => {
     const fixture = TestBed.createComponent(ProfileCard);
     const profileCard = fixture.componentInstance;
 
-    expect(profileCard.profile()).toBeUndefined();
+    expect(profileCard.profile()).toBeNull();
   });
 });

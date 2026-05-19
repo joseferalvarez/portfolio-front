@@ -1,0 +1,112 @@
+<div>
+  <form class="contact-form" novalidate>
+    <div class="inputs">
+      <div class="input-text">
+        <label for="name">
+          Name
+          @if (contactForm.name().required()) {
+            <span class="required">*</span>
+          }
+        </label>
+        <input type="text" id="name" placeholder="Name" [formField]="contactForm.name" />
+        @if (contactForm.name().touched() && contactForm.name().errors().length > 0) {
+          <ul class="errors">
+            @for (error of contactForm.name().errors(); track $index) {
+              <li>{{ error.message }}</li>
+            }
+          </ul>
+        }
+      </div>
+      <div class="input-text">
+        <label for="email">
+          Email
+          @if (contactForm.email().required()) {
+            <span class="required">*</span>
+          }
+        </label>
+        <input type="email" id="email" placeholder="Email" [formField]="contactForm.email" />
+        @if (contactForm.email().touched() && contactForm.email().errors().length > 0) {
+          <ul class="errors">
+            @for (error of contactForm.email().errors(); track $index) {
+              <li>{{ error.message }}</li>
+            }
+          </ul>
+        }
+      </div>
+      <div class="input-text">
+        <label for="company">
+          Company
+          @if (contactForm.company().required()) {
+            <span class="required">*</span>
+          }
+        </label>
+        <input type="text" id="company" placeholder="Company" [formField]="contactForm.company" />
+        @if (contactForm.company().touched() && contactForm.company().errors().length > 0) {
+          <ul class="errors">
+            @for (error of contactForm.company().errors(); track $index) {
+              <li>{{ error.message }}</li>
+            }
+          </ul>
+        }
+      </div>
+      <div class="input-text">
+        <label for="phone">
+          Phone
+          @if (contactForm.phone().required()) {
+            <span class="required">*</span>
+          }
+        </label>
+        <input type="tel" id="phone" placeholder="Phone" [formField]="contactForm.phone" />
+        @if (contactForm.phone().touched() && contactForm.phone().errors().length > 0) {
+          <ul class="errors">
+            @for (error of contactForm.phone().errors(); track $index) {
+              <li>{{ error.message }}</li>
+            }
+          </ul>
+        }
+      </div>
+      <div class="input-text">
+        <label for="linkedin">
+          LinkedIn
+          @if (contactForm.linkedin().required()) {
+            <span class="required">*</span>
+          }
+        </label>
+        <input type="url" id="linkedin" placeholder="LinkedIn" [formField]="contactForm.linkedin" />
+        @if (contactForm.linkedin().touched() && contactForm.linkedin().errors().length > 0) {
+          <ul class="errors">
+            @for (error of contactForm.linkedin().errors(); track $index) {
+              <li>{{ error.message }}</li>
+            }
+          </ul>
+        }
+      </div>
+    </div>
+    <div class="message">
+      <div class="input-text">
+        <label for="message">
+          Message
+          @if (contactForm.message().required()) {
+            <span class="required">*</span>
+          }
+        </label>
+        <textarea
+          placeholder="Message"
+          rows="10"
+          id="message"
+          [formField]="contactForm.message"
+        ></textarea>
+        @if (contactForm.message().touched() && contactForm.message().errors().length > 0) {
+          <ul class="errors">
+            @for (error of contactForm.message().errors(); track $index) {
+              <li>{{ error.message }}</li>
+            }
+          </ul>
+        }
+      </div>
+    </div>
+    <div class="buttons">
+      <button type="submit" (submit)="onSubmit($event)">Send message</button>
+    </div>
+  </form>
+</div>
