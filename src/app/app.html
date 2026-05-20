@@ -1,8 +1,10 @@
 <div class="app" [class]="theme()">
   <div>
+    <app-toast></app-toast>
     <app-navigation></app-navigation>
     <router-outlet></router-outlet>
   </div>
 
   <button (click)="toggleTheme()">Toggle theme</button>
+  <button (click)="sendToast('Hello world!')">Send toast</button>
 </div>

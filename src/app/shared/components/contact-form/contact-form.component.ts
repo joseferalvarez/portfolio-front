@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject, computed } from '@angular/core';
 import { form, minLength, required, submit, FormField, email } from '@angular/forms/signals';
 import { Contact } from '@models/contact';
+import { ContactService } from '@services/contact.service';
 
 @Component({
   selector: 'jf-contact-form',
@@ -9,6 +10,9 @@ import { Contact } from '@models/contact';
   imports: [FormField],
 })
 export class ContactForm {
+  contactService = inject(ContactService);
+  postResult = computed(() => this.contactService.postResult());
+
   contactModel = signal<Contact>({
     name: '',
     email: '',
@@ -33,7 +37,16 @@ export class ContactForm {
     event.preventDefault();
 
     submit(this.contactForm, async (data) => {
-      console.log();
+      const newContact = {
+        name: data.name().value(),
+        email: data.email().value(),
+        ...(data.company().value() && { company: data.company().value() }),
+        ...(data.phone().value() && { phone: data.phone().value() }),
+        ...(data.linkedin().value() && { linkedin: data.linkedin().value() }),
+        message: data.message().value(),
+      };
+
+      await this.contactService.sendContact(newContact);
     });
   }
 }
